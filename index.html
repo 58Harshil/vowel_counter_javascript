@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Counter</title>
+</head>
+<body class="bg-black text-white">
+    
+    <center>
+        <p class="text-3xl font-bold mt-14">Vowel Counter Javascript</p>
+     <div class="mt-20 text-xl mx-12 py-4 rounded-xl bg-white text-black">
+    <label class="font-bold text-2xl "  for="nameInput">Enter a name:</label><br><br>
+    <input class="border-2 border-black" type="text" id="nameInput"><br><br>
+    <button class="bg-red-500 font-bold  text-white hover:bg-green-500 py-1 px-4 rounded-2xl" onclick="countVowels()">Count Vowels</button><br><br>
+    <p class="text-green-500" id="result"></p>
+    </div>
+    </center>
+</body>
+<script>
+    function countVowels() {
+      const name = document.getElementById("nameInput").value.toLowerCase(); //lower letter
+      let count = 0;
+      for (let i = 0; i < name.length; i++) {
+        const char = name[i];
+        if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u") {
+          count++;
+        }
+      }
+      document.getElementById("result").textContent = `Number of vowels: ${count}`;
+    }
+  </script>
+</html>
